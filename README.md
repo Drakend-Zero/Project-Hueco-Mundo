@@ -29,4 +29,11 @@ Logica de cada proceso de comandos con los teclados:
 Condicion de victoria:
 Muy simple,gana quien en el transcurso de 20 turnos tenga mayor vida.
 
+Adicional:
+
+Para el juego use Spectre.Console.No tiene 
+
+Recomendacion:
+
+No presionar de mas el juego con la carga de procesos consecutivos
 
