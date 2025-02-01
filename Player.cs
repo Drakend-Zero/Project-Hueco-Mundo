@@ -82,9 +82,7 @@ namespace MazeGame
             table.Border = TableBorder.Ascii;
                  
 
-            AnsiConsole.Write(new FigletText("Soul Selection")
-                .LeftJustified()
-                .Color(Color.Blue));
+            AnsiConsole.Write(new FigletText("Soul Selection").LeftJustified().Color(Color.Blue));
             
             AnsiConsole.Live(table)
                 .AutoClear(false)
@@ -134,7 +132,7 @@ namespace MazeGame
             if(soul1 == 1)
             {
                 grid.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                grid.AddRow("Skill","[Yellow]Bankai[/]");
+                grid.AddRow("Skill","[Yellow]Bankai[/]()");
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
@@ -154,7 +152,7 @@ namespace MazeGame
                 if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]");
+                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -163,7 +161,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/]");
+                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -172,7 +170,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/]");
+                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}"); 
                     AnsiConsole.Write(grid2);
@@ -181,7 +179,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/]");
+                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -191,7 +189,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/]");
+                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -204,7 +202,7 @@ namespace MazeGame
             else if(soul1 == 2)
             {
                 grid.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                grid.AddRow("Skill","[Blue]Sonido[/]");
+                grid.AddRow("Skill","[Blue]Sonido[/](U)");
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
@@ -225,7 +223,7 @@ namespace MazeGame
                 if (soul1 >= 1 && soul1 <= 5 && soul2 == 1)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]");
+                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -234,7 +232,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/]");
+                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -243,7 +241,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/]");
+                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}"); 
                     AnsiConsole.Write(grid2);
@@ -252,7 +250,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/]");
+                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -262,7 +260,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/]");
+                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -276,7 +274,7 @@ namespace MazeGame
             else if(soul1 == 3)
             {
                 grid.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                grid.AddRow("Skill","[Red]Hollow Mask[/]");
+                grid.AddRow("Skill","[Red]Hollow Mask[/](I)");
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
@@ -299,7 +297,7 @@ namespace MazeGame
                 if (soul1 >= 1 && soul1 <= 5 && soul2 == 1)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]");
+                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -308,7 +306,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/]");
+                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -317,7 +315,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/]");
+                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}"); 
                     AnsiConsole.Write(grid2);
@@ -326,7 +324,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/]");
+                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -336,7 +334,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/]");
+                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -350,7 +348,7 @@ namespace MazeGame
             else if(soul1 == 4)
             {
                 grid.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                grid.AddRow("Skill","[Yellow]Zero[/]");
+                grid.AddRow("Skill","[Yellow]Zero[/](O)");
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
@@ -371,7 +369,7 @@ namespace MazeGame
                 if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]");
+                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -380,7 +378,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/]");
+                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -389,7 +387,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/]");
+                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}"); 
                     AnsiConsole.Write(grid2);
@@ -398,7 +396,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/]");
+                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -408,7 +406,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/]");
+                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -421,7 +419,7 @@ namespace MazeGame
             else if(soul1 == 5)
             {
                 grid.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                grid.AddRow("Skill","[Yellow]Spiritual Absortion[/]");
+                grid.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
@@ -442,7 +440,7 @@ namespace MazeGame
                 if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]");
+                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -451,7 +449,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/]");
+                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}");
                     AnsiConsole.Write(grid2);
@@ -460,7 +458,7 @@ namespace MazeGame
                 else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/]");
+                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
                     grid2.AddRow("Speed",$"{Ps2}");
                     grid2.AddRow("Steps",$"{stepsP2}"); 
                     AnsiConsole.Write(grid2);
@@ -469,7 +467,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/]");
+                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -479,7 +477,7 @@ namespace MazeGame
                 else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
                 {
                     grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/]");
+                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
                     grid2.AddRow("Speed",$"{Ps}");
                     grid2.AddRow("Steps",$"{stepsP1}");
                     AnsiConsole.Write(grid);
@@ -494,6 +492,8 @@ namespace MazeGame
                 Console.WriteLine("Please choose a class player.");
                 ClassofPlayer1(Ps,Ps2);
             }
+            Console.Clear();
+            AnsiConsole.MarkupLine("All habilities after 4 or 5 turns jjjj." );
     
         }
 

@@ -8,8 +8,8 @@ namespace MazeGame
 {
     public class Game:Player
     {
-        public static int width = 9;
-        public static int height = 9;
+        public static int width = 131;
+        public static int height = 21;
         public static int[,] maze = new int[width,height];
         public static Random random = new Random();
         public static int PlayerX = 1;
@@ -22,7 +22,7 @@ namespace MazeGame
         public static int trapsSet = 0;
         public static int trapsSet2 = 0;
         public static int trapsSet3 = 0;
-        public static int maxTraps = 3;
+        public static int maxTraps = 2;
         public static int playerLife = (int)PlayerStats.Life;
         public static int player2Life = (int)Player2Stats.Life;
         public static int change = 1;
