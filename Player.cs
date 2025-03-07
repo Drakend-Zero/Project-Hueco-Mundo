@@ -10,7 +10,7 @@ namespace MazeGame
 {
     public class Player
     {
-        public static int soul1 = int.Parse(Console.ReadLine()!);
+        public static int soul1;
         public static int soul2;
         public static int stepsP1 = 9;
         public static int stepsP2 = 9;
@@ -69,6 +69,8 @@ namespace MazeGame
                 AnsiConsole.WriteLine("(ojo si fallan el paso será tomado como gastado :confunded_face:).");
                 AnsiConsole.WriteLine("También las tácticas serán vitales para ser el ganador en este juego de resistencia y paciencia");
                 ClassofPlayer1(Ps,Ps2);
+                ClassofPlayer2(Ps,Ps2);
+                AnsiConsole.MarkupLine("Los primeros 4 o 5 turnos son de posicionamiento" );
                 Thread.Sleep(2000);
         }
 
@@ -82,8 +84,9 @@ namespace MazeGame
             table.Border = TableBorder.Ascii;
                  
 
-            AnsiConsole.Write(new FigletText("Soul Selection").LeftJustified().Color(Color.Blue));
+            AnsiConsole.Write(new FigletText("Soul Selection").Centered().Color(Color.Blue));
             
+            AnsiConsole.MarkupLine("ENTER THE NUMBER OF YOUR SOUL :skull: :" );
             AnsiConsole.Live(table)
                 .AutoClear(false)
                 .StartAsync(async ctx=>
@@ -121,18 +124,12 @@ namespace MazeGame
             var grid = new Grid();
             grid.AddColumn();
             grid.AddColumn();
-
-            var grid2 = new Grid();
-            grid2.AddColumn();
-            grid2.AddColumn();
-
                 
-            AnsiConsole.MarkupLine("ENTER THE NUMBER OF YOUR SOUL :skull::skull::skull:..." );
-           
+            soul1 = int.Parse(Console.ReadLine()!);
             if(soul1 == 1)
             {
                 grid.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                grid.AddRow("Skill","[Yellow]Bankai[/]()");
+                grid.AddRow("Skill","[Yellow]Bankai[/](R)");
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
@@ -148,56 +145,7 @@ namespace MazeGame
                 .Color(Color.Blue));
                 AnsiConsole.Write(table);
                 AnsiConsole.MarkupLine("[red]P2 choose your soul[/]:skull::" );
-                soul2 = int.Parse(Console.ReadLine()!);
-                if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("He can redo everything with his bankai and win in certain turns");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can move fast around walls and if the conditions are well he has a special hability");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}"); 
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can incapacitate the other player of using his hability with his Hollow Mask");
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("A normal player but not so much in certain conditions when he use his ZERO");
-                    
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("This player can have more steps by his stamina recovery");
-                    
-                }
-                Console.WriteLine("Press any key to continue:" );
-                Console.ReadKey(true);
+                
             }
             else if(soul1 == 2)
             {
@@ -219,57 +167,6 @@ namespace MazeGame
                 AnsiConsole.Write(table);
                 AnsiConsole.MarkupLine("[red]P2 choose your soul[/]:skull::" );
 
-                soul2 = int.Parse(Console.ReadLine()!);
-                if (soul1 >= 1 && soul1 <= 5 && soul2 == 1)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("He can redo everything with his bankai and win in certain turns");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can move fast around walls and if the conditions are well he has a special hability");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}"); 
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can incapacitate the other player of using his hability with his Hollow Mask");
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("A normal player but not so much in certain conditions when he use his ZERO");
-                    
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("This player can have more steps by his stamina recovery");
-                    
-                }
-
-                Console.WriteLine("Press any key to continue:" );
-                Console.ReadKey(true);
             }
             else if(soul1 == 3)
             {
@@ -278,7 +175,7 @@ namespace MazeGame
                 grid.AddRow("Speed",$"{Ps}");
                 grid.AddRow("Steps",$"{stepsP1}");
                 AnsiConsole.Write(grid);
-                AnsiConsole.MarkupLine("This player can incapacitate the other player of using his hability with his Hollow Mask");
+                AnsiConsole.MarkupLine("This player can incapacitate the other player of using their hability with his Hollow Mask");
                 Console.WriteLine("Continue second player:" );
                 
                 Console.ReadKey(true);
@@ -292,58 +189,7 @@ namespace MazeGame
                 AnsiConsole.Write(table);
                 AnsiConsole.MarkupLine("[red]P2 choose your soul[/]:skull::" );
 
-
-                soul2 = int.Parse(Console.ReadLine()!);
-                if (soul1 >= 1 && soul1 <= 5 && soul2 == 1)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("He can redo everything with his bankai and win in certain turns");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can move fast around walls and if the conditions are well he has a special hability");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}"); 
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can incapacitate the other player of using his hability with his Hollow Mask");
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("A normal player but not so much in certain conditions when he use his ZERO");
-                    
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("This player can have more steps by his stamina recovery");
-                    
-                }
                 
-                Console.WriteLine("Press any key to continue:" );
-                Console.ReadKey(true);
             }
             else if(soul1 == 4)
             {
@@ -365,56 +211,8 @@ namespace MazeGame
                 .Color(Color.Blue));
                 AnsiConsole.Write(table);
                 AnsiConsole.MarkupLine("[red]P2 choose your soul[/]:skull::" );
-                soul2 = int.Parse(Console.ReadLine()!);
-                if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("He can redo everything with his bankai and win in certain turns");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can move fast around walls and if the conditions are well he has a special hability");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}"); 
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can incapacitate the other player of using his hability with his Hollow Mask");
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("A normal player but not so much in certain conditions when he use his ZERO");
-                    
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("This player can have more steps by his stamina recovery");
-                    
-                }
-                Console.WriteLine("Press any key to continue:" );
-                Console.ReadKey(true);
+
+            
             }
             else if(soul1 == 5)
             {
@@ -436,65 +234,126 @@ namespace MazeGame
                 .Color(Color.Blue));
                 AnsiConsole.Write(table);
                 AnsiConsole.MarkupLine("[red]P2 choose your soul[/]:skull::" );
-                soul2 = int.Parse(Console.ReadLine()!);
-                if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Bankai[/]()");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("He can redo everything with his bankai and win in certain turns");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Blue]Sonido[/](U)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}");
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can move fast around walls and if the conditions are well he has a special hability");
-                }
-                else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
-                    grid2.AddRow("Speed",$"{Ps2}");
-                    grid2.AddRow("Steps",$"{stepsP2}"); 
-                    AnsiConsole.Write(grid2);
-                    AnsiConsole.MarkupLine("This player can incapacitate the other player of using his hability with his Hollow Mask");
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 4)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Zero[/](O)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("A normal player but not so much in certain conditions when he use his ZERO");
-                    
-                }
-                else if(soul1 >= 1 && soul1 <=5 && soul2 == 5)
-                {
-                    grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
-                    grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
-                    grid2.AddRow("Speed",$"{Ps}");
-                    grid2.AddRow("Steps",$"{stepsP1}");
-                    AnsiConsole.Write(grid);
-                    AnsiConsole.MarkupLine("This player can have more steps by his stamina recovery");
-                    
-                }
-                Console.WriteLine("Press any key to continue:" );
-                Console.ReadKey(true);
+        
             }
-            else if(soul1 != 1 && soul1 != 2 && soul1 != 3 && soul1 != 4 && soul1 != 5)
+            else if(soul1 != 1 || soul1 != 2 || soul1 != 3 || soul1 != 4 || soul1 != 5 )
             {
-                Console.WriteLine("Please choose a class player.");
+                Console.Clear();
+                AnsiConsole.Write(new FigletText("Please select one of the souls").Centered().Color(Color.Red));
+                Thread.Sleep(2000);
                 ClassofPlayer1(Ps,Ps2);
             }
             Console.Clear();
-            AnsiConsole.MarkupLine("All habilities after 4 or 5 turns jjjj." );
-    
+
+        }
+        public static void ClassofPlayer2(int Ps,int Ps2)
+        {
+            Console.ReadKey(false);
+            Console.Clear();
+
+            var table = new Table().LeftAligned();
+            table.Border = TableBorder.Ascii;
+                 
+
+            AnsiConsole.Write(new FigletText("Soul Selection").Centered().Color(Color.Blue));
+            
+            AnsiConsole.MarkupLine("ENTER THE NUMBER OF YOUR SOUL :skull: :" );
+            AnsiConsole.Live(table)
+                .AutoClear(false)
+                .StartAsync(async ctx=>
+                {
+                    await Task.Delay(100);
+                    table.AddColumn(":ghost:");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                    table.AddColumn("1");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                    table.AddColumn("2");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                    table.AddColumn("3");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                    table.AddColumn("4");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                    table.AddColumn("5");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                    table.AddRow("Classes:","Shinigami","Arrancar","Vizard","Espada","Quincy");
+                    ctx.Refresh();
+                    Thread.Sleep(100);
+
+                });
+            var grid2 = new Grid();
+            grid2.AddColumn();
+            grid2.AddColumn();
+
+            soul2 = int.Parse(Console.ReadLine()!);
+            if (soul1 >= 1 && soul1 <= 5 && soul2 == 1 )
+            {
+                grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
+                grid2.AddRow("Skill","[Yellow]Bankai[/]()");
+                grid2.AddRow("Speed",$"{Ps2}");
+                grid2.AddRow("Steps",$"{stepsP2}");
+                AnsiConsole.Write(grid2);
+                AnsiConsole.MarkupLine("He can redo everything with his bankai and win in certain turns");
+            }
+            else if (soul1 >= 1 && soul1 <= 5 && soul2 == 2)
+            {
+                grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
+                grid2.AddRow("Skill","[Blue]Sonido[/](U)");
+                grid2.AddRow("Speed",$"{Ps2}");
+                grid2.AddRow("Steps",$"{stepsP2}");
+                AnsiConsole.Write(grid2);
+                AnsiConsole.MarkupLine("This player can move fast around walls and if the conditions are well he has a special hability");
+            }
+            else if (soul1 >= 1 && soul1 <= 5 && soul2 == 3)
+            {
+                grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
+                grid2.AddRow("Skill","[Red]Hollow Mask[/](I)");
+                grid2.AddRow("Speed",$"{Ps2}");
+                grid2.AddRow("Steps",$"{stepsP2}"); 
+                AnsiConsole.Write(grid2);
+                AnsiConsole.MarkupLine("This player can incapacitate the other player of using their hability with his Hollow Mask");
+            }
+            else if (soul1 >= 1 && soul1 <=5 && soul2 == 4)
+            {
+                grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
+                grid2.AddRow("Skill","[Yellow]Zero[/](O)");
+                grid2.AddRow("Speed",$"{Ps}");
+                grid2.AddRow("Steps",$"{stepsP1}");
+                AnsiConsole.Write(grid2);
+                AnsiConsole.MarkupLine("A normal player but not so much in certain conditions when he use his ZERO");
+                
+            }
+            else if (soul1 >= 1 && soul1 <=5 && soul2 == 5)
+            {
+                grid2.AddRow(new string[]{"Life",$"[Green]{(int)PlayerStats.Life}[/]"});
+                grid2.AddRow("Skill","[Yellow]Spiritual Absortion[/](Spacebar)");
+                grid2.AddRow("Speed",$"{Ps}");
+                grid2.AddRow("Steps",$"{stepsP1}");
+                AnsiConsole.Write(grid2);
+                AnsiConsole.MarkupLine("This player can have more steps by his stamina recovery");
+                
+            }
+            else if (soul1 >= 1 || soul1 <=5 || soul2 != 1 || soul2 != 2 || soul2 != 3 || soul2 != 4 || soul2 != 5)
+            {
+                Console.Clear();
+                AnsiConsole.Write(new FigletText("It's no fun you trying to break my game").Centered().Color(Color.Red));
+                Thread.Sleep(2000);
+                ClassofPlayer2(Ps,Ps2);
+            }
+            Console.WriteLine("Press any key to continue:" );
+            Console.ReadKey(true);
+
         }
 
         public enum PlayerStats
