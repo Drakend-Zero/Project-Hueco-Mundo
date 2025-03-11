@@ -201,12 +201,12 @@ namespace MazeGame
                         if(killerI%2 == 0)
                         {
                             if(player2Life > 30 && player2Life < 100 && key == ConsoleKey.W || key == ConsoleKey.A || key == ConsoleKey.S || key == ConsoleKey.D)player2Life-=5;
-                            else if(player2Life >= 100)player2Life-=10;
+                            else if(player2Life >= 100 && key == ConsoleKey.W || key == ConsoleKey.A || key == ConsoleKey.S || key == ConsoleKey.D)player2Life-=10;
                         }
-                        if(key == ConsoleKey.Spacebar && soul1 == 5 && playedT >= 5)ReiStep = 2;
-                        if(ReiStep == 2 && stepsP1 <= 3)
+                        if(key == ConsoleKey.Spacebar && soul1 == 5 && playedT >= 0 && stepsP1 <= 3)
                         {
-                            stepsP1 = 10;
+                            ReiStep = 2;
+                            stepsP1+=6;
                         }
                         if(stepsP1==0 || stepsP1 >3)Ps = (int)PlayerStats.Speed; 
                     }
@@ -268,12 +268,12 @@ namespace MazeGame
                         if(killerI2%2 == 0)
                         {
                             if(playerLife > 30 && playerLife < 100 && key == ConsoleKey.UpArrow || key == ConsoleKey.LeftArrow || key == ConsoleKey.DownArrow || key == ConsoleKey.RightArrow)playerLife-=5;
-                            else if(playerLife >= 100)playerLife-=10;
+                            else if(playerLife >= 100 && key == ConsoleKey.UpArrow || key == ConsoleKey.LeftArrow || key == ConsoleKey.DownArrow || key == ConsoleKey.RightArrow)playerLife-=10;
                         }
-                        if(key == ConsoleKey.Spacebar && soul2 == 5 && playedT >= 5)ReiStep2 = 2;
-                        if(ReiStep2 == 2 && stepsP2 <=3)
+                        if(key == ConsoleKey.Spacebar && soul2 == 5 && playedT >= 5 && stepsP2 <=3)
                         {
-                            stepsP2 = 10;
+                            ReiStep2 = 2;
+                            stepsP2 += 6;
                         }
                         if(stepsP2==0 || stepsP2 >3)Ps2 = (int)PlayerStats.Speed;
                     }
